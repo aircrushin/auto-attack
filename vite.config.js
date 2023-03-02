@@ -17,6 +17,7 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
   ],
+  base: './auto-attack/'
 })
 
 module.exports = {
