@@ -14,7 +14,7 @@
     "vue-router": "^4.0.16"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^2.3.3",
+    "@vitejs/plugin-vue": "^2.3.4",
     "unplugin-auto-import": "^0.9.1",
     "unplugin-vue-components": "^0.20.1",
     "vite": "^2.9.9"

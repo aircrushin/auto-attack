@@ -16,12 +16,12 @@
     />
      <el-button type="primary" class="btn" @click="GetSuggestion">Get Suggestion</el-button>
     </div>
-    <div class="result" v-show = "flag">
+    <div class="result" v-show="flag">
       <span class="re">AttackTime:</span> {{attack}}ms<br/>  
       <span class="re">ReleaseTime:</span> {{release}}ms<br/>  
     </div>
     <footer class="copyright">
-      <span class="copy">Copyright © 2021-2022</span>&nbsp; 
+      <span class="copy">Copyright © 2021-2023</span>&nbsp; 
       <span class="copy">AutoAttack</span>
     </footer>
   </div>
@@ -37,6 +37,9 @@ const GetSuggestion = () => {
   var bpm : number = parseInt(inputBpm.value)
   attack.value = 60000 / (bpm * 8)
   release.value = 60000 / (bpm * 2)
+  if (bpm === 0){
+    flag.value = false
+  }
   flag.value = true
 }
 </script>
@@ -92,6 +95,6 @@ span{
 }
 .re{
   margin-left: 20px;
-  color:#6741d9;
+  color:#eee;
 }
 </style>
