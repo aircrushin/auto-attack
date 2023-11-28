@@ -17,8 +17,8 @@
      <el-button type="primary" class="btn" @click="GetSuggestion">Get Suggestion</el-button>
     </div>
     <div class="result" v-show="flag">
-      <span class="re">AttackTime:</span> {{attack}}ms<br/>  
-      <span class="re">ReleaseTime:</span> {{release}}ms<br/>  
+      <span class="re">AttackTime:</span> {{attack}} or {{attackShort}} ms<br/>  
+      <span class="re">ReleaseTime:</span> {{release}} or {{releaseShort}} ms<br/>  
     </div>
     <footer class="copyright">
       <span class="copy">Copyright © 2021-2023</span>&nbsp; 
@@ -33,10 +33,14 @@ const inputBpm = ref('')
 var flag = ref(false)
 var attack = ref(0)
 var release= ref(0)
+var attackShort = ref(0)
+var releaseShort = ref(0)
 const GetSuggestion = () => {
   var bpm : number = parseInt(inputBpm.value)
   attack.value = 60000 / (bpm * 8)
   release.value = 60000 / (bpm * 2)
+  attackShort.value = 30000 / (bpm * 8)
+  releaseShort.value = 30000 / (bpm * 2)
   if (bpm === 0){
     flag.value = false
   }
